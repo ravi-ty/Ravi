@@ -1,0 +1,25 @@
+<html>
+    <body>
+        <p id="demo"></p>
+        <script>
+            let fetchData = async() => {
+                try{
+                    let response = await fetch("https://jsonplaceholder.typicode.com/users")
+                    let employees = await response.json();
+                    
+                    let result =(value) => {
+                        const {address, ...rest} = value;
+                        const {geo, ...adrs} = address;
+                        return Object.assign(rest,{adrs}); 
+                    }
+                    const empName = employees.map(employee => result(employee));
+                    console.log(empName);
+                }
+                catch(e) {
+                    console.log('There has been a problem with your fetch operation: ' + e.message);
+                }
+            }
+            fetchData();
+        </script>
+    </body>
+</html>
