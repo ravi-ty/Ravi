@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <script>
+            const student1 = {
+                name:"Ragu", 
+                school:"ZPHSchool",
+                marks:540,
+                show: function(){
+                    return this.name+" is studing in "+this.school
+                    +" and he got "+this.marks+" marks.";
+                }
+            }
+            const student2 = {
+                name:"Kamal", 
+                school:"Vidya High School",
+                marks:590
+            }
+            const person = Object.assign({},student1);
+            const man = JSON.parse(JSON.stringify(student2));
+            document.getElementById("demo1").innerHTML = student1.show();
+            document.getElementById("demo2").innerHTML = person.show();
+            document.getElementById("demo3").innerHTML = 
+            man.name+" is studing in "+man.school
+                    +" and he got "+man.marks+" marks.";
+        </script>
+    </body>
+</html>
