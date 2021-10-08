@@ -1,0 +1,60 @@
+<html>
+    <body>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <script>
+            var cars = [ 
+                            {
+                                maker: "Mercedes",
+                                model: 2015,
+                                color: "Red",
+                                forSale: true,
+                                price: 25000
+                            },
+                            {
+                                maker: "Mercedes",
+                                model: 2015,
+                                color: "Red",
+                                forSale: false,
+                                price: 28000
+                            },
+                            {
+                                maker: "Audi",
+                                model: 2015,
+                                color: "Red",
+                                forSale: false,
+                                price: 38000
+                            },
+                            {
+                                maker: "BMW",
+                                model: 2018,
+                                color: "Red",
+                                forSale: true,
+                                price: 48000
+                            }
+                        ];
+            let myFunction1 = (values) => {
+                return values.forSale==true;
+            } 
+            document.getElementById("demo1").innerHTML="<h1>The objects with"+
+            " forSale value as true are</h1>"+
+            JSON.stringify(cars.filter(myFunction1));
+            
+            let myFunction2 = (values) => {
+                return (values.forSale==true && values.maker=="Mercedes");
+            } 
+            document.getElementById("demo2").innerHTML="<h1>The objects with"+
+            " forSale value as true and maker as Mercedes are</h1>"+
+            JSON.stringify(cars.filter(myFunction2));
+
+            let result = "";
+            let myFunction3 = (values) => {
+                result+= "<li>"+(values.price + 1000)+"</li>";
+            }
+            cars.forEach(elements => myFunction3(elements));
+            document.getElementById("demo3").innerHTML = "<h1>Prices of all"+
+            " cars after adding 1000 are</h1>"+result;
+        </script>
+    </body>
+</html>

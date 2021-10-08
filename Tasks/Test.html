@@ -1,0 +1,57 @@
+<html>
+    <body>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <script>
+            var cars = [ 
+                            {
+                                maker: "Mercedes",
+                                model: 2015,
+                                color: "Red",
+                                forSale: true,
+                                price: 25000
+                            },
+                            {
+                                maker: "Mercedes",
+                                model: 2015,
+                                color: "Red",
+                                forSale: false,
+                                price: 28000
+                            },
+                            {
+                                maker: "Audi",
+                                model: 2015,
+                                color: "Red",
+                                forSale: false,
+                                price: 38000
+                            },
+                            {
+                                maker: "BMW",
+                                model: 2018,
+                                color: "Red",
+                                forSale: true,
+                                price: 48000
+                            }
+                        ];
+            function myFunction1(values) {
+                return values.forSale==true;
+            } 
+            const result1 = cars.filter(myFunction1);
+            console.log(result1);
+            
+            function myFunction2(values) {
+                return (values.forSale==true && values.maker=="Mercedes");
+            } 
+            const result2 = cars.filter(myFunction2);
+            console.log(result2);
+
+            document.getElementById("demo1").innerHTML="<h1>The objects with"+
+            " forSale value as true are</h1>"+
+            JSON.stringify(result1);
+
+            document.getElementById("demo2").innerHTML="<h1>The objects with"+
+            " forSale value as true and maker as Mercedes are</h1>"+
+            JSON.stringify(result2);
+        </script>
+    </body>
+</html>
