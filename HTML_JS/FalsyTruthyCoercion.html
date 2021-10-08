@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <script>
+            console.log("8"+8); //88
+            console.log("8"*8); //64
+            console.log("8"-8); //0
+            console.log(true+8); //9
+            console.log(false+8); //8
+            console.log(NaN/8); //NaN
+            
+            const truthyFalsy = (value) => {
+                if(value){
+                    console.log("I am Truthy value");
+                }else {
+                    console.log("I am Falsy value");
+                }
+            }
+            truthyFalsy("abc"); //Truthy
+            truthyFalsy(""); //Falsy
+            truthyFalsy(0); //Falsy
+            truthyFalsy(false); //Falsy
+            truthyFalsy(undefined); //Falsy
+            truthyFalsy(NaN); //Falsy
+            truthyFalsy("a"+8); //Truthy 
+            truthyFalsy(true); //Truthy
+
+            const falsyTruthy = (value) => {
+                return console.log(value ? "Truthy" : "Falsy");
+            }
+            falsyTruthy(false); //Falsy
+            falsyTruthy(true); //Truthy
+            falsyTruthy([]); //Truthy
+            falsyTruthy({}); //Truthy
+            falsyTruthy(() => {}); //Truthy
+            falsyTruthy(function Ravi(){}); //Truthy
+        </script>
+    </body>
+</html>

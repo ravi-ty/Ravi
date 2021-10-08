@@ -1,0 +1,51 @@
+<html>
+    <body>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+        <p id="demo6"></p>
+        <script>
+            const numbers = [49, 4, 9, 16, 25];
+            
+            let values = "";
+
+            let myFunction1 = (value, index, array) => {
+            values+="Index = "+index+" , "+"Value is "+value+"<br>";
+            }
+            numbers.forEach((element,index) => myFunction1(element,index));
+            document.getElementById("demo1").innerHTML=values;
+
+            let myFunction2 = (value, index, array) => {
+            return Math.sqrt(value);    
+            }
+            document.getElementById("demo2").innerHTML="Squire roots of "
+            +numbers+" are "+numbers.map(myFunction2);
+
+            let myFunction3 = (value, index, array) => {
+            return value < 10;    
+            } 
+            document.getElementById("demo3").innerHTML="Values less than"+
+            " 10 among "+numbers+" are "+numbers.filter(myFunction3);
+
+            let myFunction4 = (total, value, index, array) => {
+            return total + value;    
+            } 
+            document.getElementById("demo4").innerHTML="Sum of numbers"+
+            " is "+numbers.reduce(myFunction4);
+
+            let myFunction5 = (value, index, array) => {
+            return value<10;    
+            }
+            document.getElementById("demo5").innerHTML="First value less"+ 
+            "than 10 among "+numbers+" is "+numbers.find(myFunction5);
+
+            let myFunction6 = (value, index, array) => {
+            return value<10;    
+            } 
+            document.getElementById("demo6").innerHTML="First value index"+ 
+            "less than 10 among "+numbers+" is "+numbers.findIndex(myFunction6); 
+        </script>
+    </body>
+</html>
