@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <script>
+            console.log("Message : 1");
+
+            setTimeout(() => {
+                console.log("Message : 2");
+            },0);
+
+            Promise.resolve()
+            .then(() => {
+                console.log("Message : 3");
+            })
+            .then(() => {
+                console.log("Message : 4");
+            });
+
+            console.log("Message : 5");
+
+            /*  
+                Output in console as below...!
+
+                    Message : 1
+                    Message : 5
+                    Message : 3
+                    Message : 4
+                    Message : 2
+            */
+        </script>
+    </body>
+</html>
